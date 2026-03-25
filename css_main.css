@@ -33,3 +33,41 @@ margin-bottom: -15px;
     border-top: 0px;
     border-bottom: 0px;
 }
+
+.User_Interface{
+    height: 125px;
+    border-radius: 5px;
+    border-style: solid;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-style: solid;
+}
+
+#username{
+    width: 100%;
+margin-left: 2%; 
+font-size: x-large;
+}
+
+.User_stats {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.block_stats {
+    width: 25%;
+    height: 100%;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.box {
+
+}
+
+#status{
+    color: green;
+}
