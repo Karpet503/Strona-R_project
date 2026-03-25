@@ -1,0 +1,1 @@
+Wyjaśnienia działania bazy danych
