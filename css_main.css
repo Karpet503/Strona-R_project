@@ -73,6 +73,10 @@ font-size: x-large;
 }
 
 footer{
+    position: fixed;
+    bottom: 0;
     height: 50px;
     background-color: aqua;
+    border: 2cm;
+    width: 50%;
 }
