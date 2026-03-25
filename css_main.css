@@ -71,3 +71,8 @@ font-size: x-large;
 #status{
     color: green;
 }
+
+footer{
+    height: 50px;
+    background-color: aqua;
+}
