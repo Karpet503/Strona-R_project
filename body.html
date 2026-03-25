@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css_main.css">
+    <title>PS_Stat</title>
+    <link rel="stylesheet" href="css_main.css"> <!-- Import css-->
 </head>
 <body class="main">
+
+<!--SPIS:
+-Strona tytułowa do zmiany
+-Górny panel (header) do zmiany ustalenia
+-Blok z uzytkownikiem i zuzyciem powinien byc opiektem sprzezonym
+-Do dodania konta i inne zakladki 
+-Do zrobienia Api 
+-Potrzeba jest apk to wysylania api z uzyadzenia najlepiej kontener
+-->
 
 <pre><h1>   _____  ____  __  __ ______   ____  _    _ _      _       _____ _    _ _____ _______ 
   / ____|/ __ \|  \/  |  ____| |  _ \| |  | | |    | |     / ____| |  | |_   _|__   __|
@@ -14,19 +23,23 @@
   \___ \| |  | | |\/| |  __|   |  _ <| |  | | |    | |     \___ \|  __  | | |    | |   
   ____) | |__| | |  | | |____  | |_) | |__| | |____| |____ ____) | |  | |_| |_   | |   
  |_____/ \____/|_|  |_|______| |____/ \____/|______|______|_____/|_|  |_|_____|  |_|
-</h1></pre>
+</h1></pre><!-- Tytułowe ascii, uzywałem pre bo pozwala wyswietlic tekst lepiej ze znakami specialnymi-->
 
-    <div class="holder">
+    <div class="holder"><!-- blok główny trzymający panel górny-->
         <div class="block_holder" id="Main_Title">PC_Stat</div>
         <div class="block_holder"><a href="body.html">Główna</a></div>
         <div class="block_holder"><a href="https://chatgpt.com/" target="_blank">GPT</a></div>
         <div class="block_holder"><a href="https://youtube.pl" target="_blank">Youtube</a></div>
         <div class="block_holder">Konto</div>
     </div>
-<div class="User_Interface">
-    <div id="username">username <a id="status">&bull;</a></div>
-    <div class="User_stats">
-    <div class="block_stats">CPU
+
+<!--Cały jeden blok poniżej powinien byc klasa ktora bedzie sprzezona z baza danych dla uzytkownikow, baza danych czysty plik jest w DB, username bedzie zaciagany z bazy tak samo status 
+onnline, jezeli byla wykonana jakas akcja to onnline sie odswierza na kolejne 5 min z zalozenia, (do zrobirnia)-->
+
+<div class="User_Interface"><!-- blok główny trzymający bloki stats-->
+    <div id="username">username <a id="status">&bull;</a></div><!--username nad blokami z ikonka ascii ktora w css jest zielona -->
+    <div class="User_stats"><!--blok nadrzedny trzymajacy 4 bloki block_stat razem--> 
+    <div class="block_stats">CPU <!--blok odpowiedzialny za pomniejszy fragment w ktorym beda % zuzycia-->
         <div class="box">25%/100%</div>
         <div class="box">6cores</div>
     </div>
