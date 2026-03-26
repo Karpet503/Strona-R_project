@@ -1,16 +1,23 @@
 import sqlite3
+import json
 
 def get_active_users():
-    """Funkcja do pobierania aktywnych użytkowników z bazy danych"""
-    conn = sqlite3.connect('app_data.db')  # Używamy bazy w folderze 'DB'
+    """Pobiera aktywnych użytkowników z bazy danych i zapisuje je w formacie JSON"""
+    conn = sqlite3.connect('app_data.db')  # Połączenie z bazą danych
     cursor = conn.cursor()
     cursor.execute('''SELECT username FROM "Customers" WHERE active = TRUE''')  # Wybieramy aktywnych użytkowników
-    active_users = cursor.fetchall()  # Zwraca listę krotek z nickami
+    active_users = cursor.fetchall()  # Pobieramy wszystkich aktywnych użytkowników
     conn.close()
     
     # Zwracamy tylko nicki użytkowników
     return [user[0] for user in active_users]
 
-# Przykładowe wywołanie funkcji
-active_users = get_active_users()
-print(active_users)  # Wypisanie aktywnych użytkowników
+def save_active_users_to_file():
+    """Zapisuje dane aktywnych użytkowników do pliku JSON"""
+    active_users = get_active_users()
+    
+    with open('../JS/active_users.json', 'w') as f:
+        json.dump(active_users, f)
+
+# Wywołanie funkcji, żeby od razu zapisać dane
+save_active_users_to_file()
