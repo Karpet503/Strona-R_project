@@ -1,14 +1,28 @@
 .main{
-    background-color: #e7e7e7;
-    color: black;
+    color: white;
+    background-color: black;
+}
+body{
+    margin-left: -15px;
+    margin-right: -15px;
+    margin: 0;
+
+}
+.gradeient{
+    background: linear-gradient(to bottom, red, black);
+    height: 200px;
+    
 }
 
 h1{
-text-align: center;
-font-size: 10px;
-font-weight: bold;
-margin-top: -15px;
-margin-bottom: -15px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    background-color: black;
+    width: 100%;
+    color: red;
 }
 .head{
     
@@ -37,13 +51,15 @@ margin-bottom: -15px;
     text-align: center;
     border: none;
     border-radius: 6px;
+    background-color: black;
+    color: white;
 }
 .head_right_login{
     flex: 0 0 40%; 
     text-align: right;
     align-items: center;
 }
-.log{
+.login{
     font-size:  100%;
     border-radius: 6px;
     border: 1px solid gray;

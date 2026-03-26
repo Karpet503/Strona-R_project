@@ -10,42 +10,42 @@
     <script src="../JS/script.js"></script>  <!-- Załadowanie zewnętrznego pliku JS -->
 </head>
 <body class="main">
+<div class="gradeient">
+    <!--SPIS:
+    -Strona tytułowa do zmiany
+    -Górny panel (header) do zmiany ustalenia
+    -Blok z uzytkownikiem i zuzyciem powinien byc opiektem sprzezonym
+    -Do dodania konta i inne zakladki 
+    -Do zrobienia Api 
+    -Potrzeba jest apk to wysylania api z uzyadzenia najlepiej kontener
+    -->
 
-<!--SPIS:
--Strona tytułowa do zmiany
--Górny panel (header) do zmiany ustalenia
--Blok z uzytkownikiem i zuzyciem powinien byc opiektem sprzezonym
--Do dodania konta i inne zakladki 
--Do zrobienia Api 
--Potrzeba jest apk to wysylania api z uzyadzenia najlepiej kontener
--->
+    <pre><h1>   _____  ____  __  __ ______   ____  _    _ _      _       _____ _    _ _____ _______ 
+    / ____|/ __ \|  \/  |  ____| |  _ \| |  | | |    | |     / ____| |  | |_   _|__   __|
+    | (___ | |  | | \  / | |__    | |_) | |  | | |    | |    | (___ | |__| | | |    | |   
+    \___ \| |  | | |\/| |  __|   |  _ <| |  | | |    | |     \___ \|  __  | | |    | |   
+    ____) | |__| | |  | | |____  | |_) | |__| | |____| |____ ____) | |  | |_| |_   | |   
+    |_____/ \____/|_|  |_|______| |____/ \____/|______|______|_____/|_|  |_|_____|  |_|
+    </h1></pre><!-- Tytułowe ascii, uzywałem pre bo pozwala wyswietlic tekst lepiej ze znakami specialnymi-->
 
-<pre><h1>   _____  ____  __  __ ______   ____  _    _ _      _       _____ _    _ _____ _______ 
-  / ____|/ __ \|  \/  |  ____| |  _ \| |  | | |    | |     / ____| |  | |_   _|__   __|
- | (___ | |  | | \  / | |__    | |_) | |  | | |    | |    | (___ | |__| | | |    | |   
-  \___ \| |  | | |\/| |  __|   |  _ <| |  | | |    | |     \___ \|  __  | | |    | |   
-  ____) | |__| | |  | | |____  | |_) | |__| | |____| |____ ____) | |  | |_| |_   | |   
- |_____/ \____/|_|  |_|______| |____/ \____/|______|______|_____/|_|  |_|_____|  |_|
-</h1></pre><!-- Tytułowe ascii, uzywałem pre bo pozwala wyswietlic tekst lepiej ze znakami specialnymi-->
+    <div class="head">
 
-<div class="head">
+        <div class="head_left_logo">R_project</div>
 
-    <div class="head_left_logo">R_project</div>
+        <div class="head_midl_options"><!-- blok główny trzymający panel górny-->
+            <button class="block Główna" type="button"><span>Główna</span> </button>
+            <button class="block PC_Stat" type="button"><span>PC stats</span> </button>
+            <button class="block TODO" type="button"><span>TODO</span> </button>
+            <button class="block TODO" type="button"><span>TODO</span> </button>
+        </div>
 
-    <div class="head_midl_options"><!-- blok główny trzymający panel górny-->
-        <button class="block PC_Stat" type="button"><span>PC_Stat</span> </button>
-        <button class="block Główna" type="button"><span>Główna</span> </button>
-        <button class="block GPT" type="button"><span>GPT</span> </button>
-        <button class="block YT" type="button"><span>Youtube</span> </button>
+        <div class="head_right_login"> 
+            <button class="login logowanie" type="button"><span>Logowanie</span> </button>
+            <button class="login rejestracja" type="button"><span>Rejestracja</span></button>  <!--doaj href-->
+        </div>
+
     </div>
-
-    <div class="head_right_login"> 
-        <button class="log logowanie" type="button"><span>Logowanie</span> </button>
-        <button class="log rejestracja" type="button"><span>Rejestracja</span></button>  <!--doaj href-->
-    </div>
-
 </div>
-
 <!--Cały jeden blok poniżej powinien byc klasa ktora bedzie sprzezona z baza danych dla uzytkownikow, baza danych czysty plik jest w DB, username bedzie zaciagany z bazy tak samo status 
 onnline, jezeli byla wykonana jakas akcja to onnline sie odswierza na kolejne 5 min z zalozenia, (do zrobirnia)-->
 
