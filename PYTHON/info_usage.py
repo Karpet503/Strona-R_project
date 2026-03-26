@@ -20,3 +20,4 @@ print(f"Użycie RAM: {mem.percent}%")
 # Sekcja Disk
 disk = psutil.disk_usage('/')
 print(f"Użycie dysku: {disk.percent}%")
+
