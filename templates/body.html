@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PS_Stat</title>
-    <link rel="stylesheet" href="css_main.css"> <!-- Import css-->
-    <link rel="icon" type="image/x-icon" href="IMAGES/Logo v2.ico">
+    <link rel="stylesheet" href="../CSS/css_main.css"> <!-- Import css-->
+    <link rel="icon" type="image/x-icon" href="../IMAGES/Logo v2.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Załadowanie jQuery -->
+    <script src="{{ url_for('static', filename='JS/script.js') }}"></script>  <!-- Załadowanie pliku JS -->
 </head>
 <body class="main">
 
@@ -68,6 +70,11 @@ onnline, jezeli byla wykonana jakas akcja to onnline sie odswierza na kolejne 5 
     </div>
     <div>
 </div>
-<footer>test</footer>
+<footer>
+    <h1>Aktywni użytkownicy</h1>
+    <ul id="users-list">
+        <!-- Lista aktywnych użytkowników zostanie zaktualizowana przez AJAX -->
+    </ul>
+</footer>
 </body>
 </html>
