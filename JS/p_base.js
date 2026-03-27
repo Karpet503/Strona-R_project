@@ -1,4 +1,4 @@
-const button_reje = document.getElementsByClassName('rejestracja');
+const button_reje = document.getElementsByClassName('login rejestracja');
 
 // Funckja dodająca usera do tabeli Customer
 function addCustomer() {
@@ -50,5 +50,20 @@ function addCustomer() {
 // Po udanej rejestracji pokazujemy userowi komunikat i przenosimy do głównej
 function closeTab() {
   alert("Rejestracja udana!");
-  window.location.href = "body.html";
+  window.location.href = "body";
+}
+
+// Pobranie z bazy danych userów
+function showUsers() {
+  fetch('/SelectUsers')
+    .then(response => response.json())
+    .then(data => {
+      let userslist = '';
+
+      data.forEach(item => {
+          userslist += `id: ${item.id}, username: ${item.username}, computer: ${item.computer}, email: ${item.email}, telefon_num: ${item.telefon_num}<br>`;
+      });
+
+      document.getElementById('showus').innerHTML = userslist;
+    })
 }

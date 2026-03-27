@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rejestracja</title>
     <link rel="stylesheet" href="../CSS/css_main.css"> <!-- Import css-->
-    <link rel="icon" type="image/x-icon" href="../IMAGES/Logo v2.ico">
+     <link rel="shortcut icon" href="../IMAGES/Logo v2.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Załadowanie jQuery -->
     <script src="../JS/p_base.js"></script>  <!-- Załadowanie zewnętrznego pliku JS -->
 </head>
@@ -40,8 +40,8 @@
         </div>
 
         <div class="head_right_login"> 
-            <button class="logowanie" type="button"><span>Logowanie</span></button>
-            <button class="rejestracja" type="button" onclick="window.location.href='/'"><span>Rejestracja</span></button>
+            <button class="login logowanie" type="button"><span>Logowanie</span></button>
+            <button class="login rejestracja" type="button" onclick="window.location.href='/rejestracja'"><span>Rejestracja</span></button>
         </div>
 
     </div>
@@ -57,8 +57,12 @@
     <input type="text" id="telefon_num" placeholder="Numer telefonu" required>
 
 
-    <button onclick="addCustomer()">Dodaj Klienta</button>  
+    <button onclick="addCustomer()">Dodaj dane</button>  
     <button onclick="closeTab()">Anuluj</button> 
+    <br><br>
+    <h2>Test sprawdzenie danych</h2>
+    <button onclick="showUsers()">Pokaż userów</button>
+    <p id="showus"></p>
   </div>
 <footer>
     <h1>Aktywni użytkownicy</h1>
