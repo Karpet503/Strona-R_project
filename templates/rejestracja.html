@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PS_Stat</title>
+    <title>Rejestracja</title>
     <link rel="stylesheet" href="../CSS/css_main.css"> <!-- Import css-->
     <link rel="icon" type="image/x-icon" href="../IMAGES/Logo v2.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Załadowanie jQuery -->
@@ -46,30 +46,20 @@
 
     </div>
 </div>
-<!--Cały jeden blok poniżej powinien byc klasa ktora bedzie sprzezona z baza danych dla uzytkownikow, baza danych czysty plik jest w DB, username bedzie zaciagany z bazy tak samo status 
-onnline, jezeli byla wykonana jakas akcja to onnline sie odswierza na kolejne 5 min z zalozenia, (do zrobirnia)-->
+<!-- Pole rejestracji użytkowników. Baza danych jest za pomocą Flask aktywowana lokalnie (póki nie ma serwera). -->
+  <div id="registrationTab">
+    <h2>Rejestracja Klienta</h2>
 
-<div class="User_Interface"><!-- blok główny trzymający bloki stats-->
-    <div id="username">username <a id="status">&bull;</a></div><!--username nad blokami z ikonka ascii ktora w css jest zielona -->
-    <div class="User_stats"><!--blok nadrzedny trzymajacy 4 bloki block_stat razem--> 
-    <div class="block_stats">CPU <!--blok odpowiedzialny za pomniejszy fragment w ktorym beda % zuzycia-->
-        <div class="box">25%/100%</div>
-        <div class="box">6cores</div>
-    </div>
-    <div class="block_stats">RAM
-        <div class="box">25%/100%</div>
-        <div class="box">12GB/32GB</div>
-    </div>
-    <div class="block_stats">GPU
-        <div class="box">25%/100%</div>
-        <div class="box">2GB/8GB</div>
-    </div>
-    <div class="block_stats">DISK_SPACE
-        <div class="box">25%/100%</div>
-        <div class="box">50GB/256GB</div>
-    </div>
-    <div>
-</div>
+    <!-- Input Fields for New Customer Data -->
+    <input type="text" id="username" placeholder="Nazwa użytkownika" required>
+    <input type="text" id="computer" placeholder="Komputer" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="telefon_num" placeholder="Numer telefonu" required>
+
+
+    <button onclick="addCustomer()">Dodaj Klienta</button>  
+    <button onclick="closeTab()">Anuluj</button> 
+  </div>
 <footer>
     <h1>Aktywni użytkownicy</h1>
     <ul id="users-list">
