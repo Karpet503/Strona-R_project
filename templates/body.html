@@ -44,17 +44,63 @@
     </div>
 
     <div class="head_right_login"> 
-        <button class="login logowanie" onclick="bluruj()" onclick="open()" type="button"><span>Logowanie</span> </button>
-        <button class="login rejestracja" type="button"><span>Rejestracja</span></button>  <!--doaj href-->
+        <button class="login logowanie" onclick="bluruj()" type="button"><span>Logowanie</span> </button>
+        <button class="login rejestracja" onclick="bluruj()"  type="button"><span>Rejestracja</span></button>  <!--doaj href-->
     </div>
 </div>
 
 
 
 <div class="overlay"></div>
-<div class="sidebar">
-    <button class="block zamknij" onclick="close">X</button>
+<div class="sidebar_S_log">
+    <button class="block zamknij Z_log" onclick="close">X</button>
+    <div class="Log_Rej">
+        <p class="zamknij">LOGOWANIE</p>
 
+        <form action="#">
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="emile" required>
+                <lable>Email</lable>
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="hasło" required>
+                <lable>Hasło</lable>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+<div class="sidebar_S_rej">
+    <button class="block zamknij Z_rej" onclick="close">X</button>
+    <div class="Log_Rej">
+        <p class="zamknij">REJESTRACJA</p>
+
+        <form action="#">
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="emile" required>
+                <lable>Email</lable>
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="hasło" required>
+                <lable>Hasło</lable>
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="hasło" required>
+                <lable>Hasło</lable>
+            </div>
+
+
+        </form>
+
+    </div>
 </div>
 
 

@@ -203,15 +203,18 @@ footer{
 }
 :root{
     --sidebar-aper: none;
+    --sidebar-zindexLog: -1;
+    --sidebar-zindexRej: -1;
+
 }
 
-.sidebar{
+.sidebar_S_log{
     height: 100%;
     width: 25%;
     top:0;
     right: 0;
     background-color: rgb(30, 35, 45);
-    z-index: 9999;
+    z-index: var(--sidebar-zindexLog);
     position: fixed;
     border: 1px solid gray;
     border-radius: 5px;
@@ -219,14 +222,35 @@ footer{
     display: var(--sidebar-aper);
 
 }
-body.closed {
+body.Open_Log {
     
     --sidebar-width: 25%;
     --sidebar-aper: ;
-
-
-    
+    --sidebar-zindexLog: 9999;
 }
+
+.sidebar_S_rej{
+    height: 100%;
+    width: 25%;
+    top:0;
+    right: 0;
+    background-color: rgb(30, 35, 45);
+    z-index: var(--sidebar-zindexRej);
+    position: fixed;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: var(--sidebar-width);
+    display: var(--sidebar-aper);
+
+}
+
+body.Open_Rej {
+    
+    --sidebar-width: 25%;
+    --sidebar-aper: ;
+    --sidebar-zindexRej: 9999;
+}
+
 .zamknij{
     margin:6px;
     font-size: 100%;
@@ -234,7 +258,10 @@ body.closed {
     position: sticky;
 }
 
-
+.Log_Rej{
+    flex-direction: column;
+    text-align: center;
+}
 
 
 
