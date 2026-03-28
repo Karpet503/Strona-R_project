@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PS_Stat</title>
     <link rel="stylesheet" href="../CSS/css_main.css"> <!-- Import css-->
-    <link rel="icon" type="image/x-icon" href="../IMAGES/Logo v2.ico">
+    <link rel="shortcut icon" href="../IMAGES/Logo v2.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Załadowanie jQuery -->
     <script src="../JS/script.js"></script>  <!-- Załadowanie zewnętrznego pliku JS -->
     
@@ -15,6 +15,7 @@
 <!--=============================testy==================================================-->
 </head>
 <body class="main">
+<div class="gradeient">
     <!--SPIS:
     -Strona tytułowa do zmiany
     -Górny panel (header) do zmiany ustalenia
@@ -24,24 +25,29 @@
     -Potrzeba jest apk to wysylania api z uzyadzenia najlepiej kontener
     -->
 
-    <!-- <pre><h1>   _____  ____  __  __ ______   ____  _    _ _      _       _____ _    _ _____ _______ 
+    <pre><h1>   _____  ____  __  __ ______   ____  _    _ _      _       _____ _    _ _____ _______ 
     / ____|/ __ \|  \/  |  ____| |  _ \| |  | | |    | |     / ____| |  | |_   _|__   __|
     | (___ | |  | | \  / | |__    | |_) | |  | | |    | |    | (___ | |__| | | |    | |   
     \___ \| |  | | |\/| |  __|   |  _ <| |  | | |    | |     \___ \|  __  | | |    | |   
     ____) | |__| | |  | | |____  | |_) | |__| | |____| |____ ____) | |  | |_| |_   | |   
-    |_____/ \____/|_|  |_|______| |____/ \____/|______|______|_____/|_|  |_|_____|  |_|
-    </h1></pre> --><!-- Tytułowe ascii, uzywałem pre bo pozwala wyswietlic tekst lepiej ze znakami specialnymi-->
+|_____/ \____/|_|  |_|______| |____/ \____/|______|______|_____/|_|  |_|_____|  |_|
+    </h1></pre><!-- Tytułowe ascii, uzywałem pre bo pozwala wyswietlic tekst lepiej ze znakami specialnymi-->
 
-<div class="head">
+    <div class="head">
 
-    <div class="head_left_logo">R_project</div>
+        <div class="head_left_logo">R_project</div>
 
-    <div class="head_midl_options"><!-- blok główny trzymający panel górny-->
-        <button class="block Główna" type="button"><span>Główna</span> </button>
-        <button class="block PC_Stat" type="button"><span>PC stats</span> </button>
-        <button class="block TODO" type="button"><span>TODO</span> </button>
-        <button class="block TODO" type="button"><span>TODO</span> </button>
-    </div>
+        <div class="head_midl_options"><!-- blok główny trzymający panel górny-->
+            <button class="block Główna" type="button" onclick="window.location.href='/body'"><span>Główna</span> </button>
+            <button class="block PC_Stat" type="button"><span>PC stats</span> </button>
+            <button class="block TODO" type="button"><span>TODO</span> </button>
+            <button class="block TODO" type="button"><span>TODO</span> </button>
+        </div>
+
+        <div class="head_right_login"> 
+            <button class="login logowanie" type="button"><span>Logowanie</span></button>
+            <button class="login rejestracja" type="button" onclick="window.location.href='/rejestracja'"><span>Rejestracja</span></button>
+        </div>
 
     <div class="head_right_login"> 
         <button class="login logowanie" onclick="bluruj()" type="button"><span>Logowanie</span> </button>

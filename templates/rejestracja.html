@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="../CSS/css_main.css"> <!-- Import css-->
+     <link rel="shortcut icon" href="../IMAGES/Logo v2.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Załadowanie jQuery -->
+    <script src="../JS/p_base.js"></script>  <!-- Załadowanie zewnętrznego pliku JS -->
+</head>
+<body class="main">
+<div class="gradeient">
+    <!--SPIS:
+    -Strona tytułowa do zmiany
+    -Górny panel (header) do zmiany ustalenia
+    -Blok z uzytkownikiem i zuzyciem powinien byc opiektem sprzezonym
+    -Do dodania konta i inne zakladki 
+    -Do zrobienia Api 
+    -Potrzeba jest apk to wysylania api z uzyadzenia najlepiej kontener
+    -->
+
+    <pre><h1>   _____  ____  __  __ ______   ____  _    _ _      _       _____ _    _ _____ _______ 
+    / ____|/ __ \|  \/  |  ____| |  _ \| |  | | |    | |     / ____| |  | |_   _|__   __|
+    | (___ | |  | | \  / | |__    | |_) | |  | | |    | |    | (___ | |__| | | |    | |   
+    \___ \| |  | | |\/| |  __|   |  _ <| |  | | |    | |     \___ \|  __  | | |    | |   
+    ____) | |__| | |  | | |____  | |_) | |__| | |____| |____ ____) | |  | |_| |_   | |   
+|_____/ \____/|_|  |_|______| |____/ \____/|______|______|_____/|_|  |_|_____|  |_|
+    </h1></pre><!-- Tytułowe ascii, uzywałem pre bo pozwala wyswietlic tekst lepiej ze znakami specialnymi-->
+
+    <div class="head">
+
+        <div class="head_left_logo">R_project</div>
+
+        <div class="head_midl_options"><!-- blok główny trzymający panel górny-->
+            <button class="block Główna" type="button" onclick="window.location.href='/body'"><span>Główna</span> </button>
+            <button class="block PC_Stat" type="button"><span>PC stats</span> </button>
+            <button class="block TODO" type="button"><span>TODO</span> </button>
+            <button class="block TODO" type="button"><span>TODO</span> </button>
+        </div>
+
+        <div class="head_right_login"> 
+            <button class="login logowanie" type="button"><span>Logowanie</span></button>
+            <button class="login rejestracja" type="button" onclick="window.location.href='/rejestracja'"><span>Rejestracja</span></button>
+        </div>
+
+    </div>
+</div>
+<!-- Pole rejestracji użytkowników. Baza danych jest za pomocą Flask aktywowana lokalnie (póki nie ma serwera). -->
+  <div id="registrationTab">
+    <h2>Rejestracja Klienta</h2>
+
+    <!-- Input Fields for New Customer Data -->
+    <input type="text" id="username" placeholder="Nazwa użytkownika" required>
+    <input type="text" id="computer" placeholder="Komputer" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="telefon_num" placeholder="Numer telefonu" required>
+
+
+    <button onclick="addCustomer()">Dodaj dane</button>  
+    <button onclick="closeTab()">Anuluj</button> 
+    <br><br>
+    <h2>Test sprawdzenie danych</h2>
+    <button onclick="showUsers()">Pokaż userów</button>
+    <p id="showus"></p>
+  </div>
+<footer>
+    <h1>Aktywni użytkownicy</h1>
+    <ul id="users-list">
+        <!-- Lista aktywnych użytkowników zostanie zaktualizowana przez AJAX -->
+    </ul>
+</footer>
+</body>
+</html>
