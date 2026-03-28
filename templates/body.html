@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="../CSS/css_main.css"> <!-- Import css-->
     <link rel="shortcut icon" href="../IMAGES/Logo v2.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Załadowanie jQuery -->
-    <script src="../JS/p_base.js"></script>  <!-- Załadowanie zewnętrznego pliku JS -->
+    <script src="../JS/script.js"></script>  <!-- Załadowanie zewnętrznego pliku JS -->
+    
+<!--==============================testy==================================================-->
+    
+    
+<!--=============================testy==================================================-->
 </head>
 <body class="main">
 <div class="gradeient">
@@ -44,8 +49,73 @@
             <button class="login rejestracja" type="button" onclick="window.location.href='/rejestracja'"><span>Rejestracja</span></button>
         </div>
 
+    <div class="head_right_login"> 
+        <button class="login logowanie" onclick="bluruj()" type="button"><span>Logowanie</span> </button>
+        <button class="login rejestracja" onclick="bluruj()"  type="button"><span>Rejestracja</span></button>  <!--doaj href-->
     </div>
 </div>
+
+
+
+<div class="overlay"></div>
+<div class="sidebar_S_log">
+    <button class="block zamknij Z_log" onclick="close">X</button>
+    <div class="Log_Rej">
+        <p class="zamknij">LOGOWANIE</p>
+
+        <form action="#">
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="emile" required>
+                <lable>Email</lable>
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="hasło" required>
+                <lable>Hasło</lable>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+<div class="sidebar_S_rej">
+    <button class="block zamknij Z_rej" onclick="close">X</button>
+    <div class="Log_Rej">
+        <p class="zamknij">REJESTRACJA</p>
+
+        <form action="#">
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="emile" required>
+                <lable>Email</lable>
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="hasło" required>
+                <lable>Hasło</lable>
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="hasło" required>
+                <lable>Hasło</lable>
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
+
+
+<div class="akapit1">
+    <!--tekst powitalny, krótkie opisanie strony-->
+
+
+</div>
+
 <!--Cały jeden blok poniżej powinien byc klasa ktora bedzie sprzezona z baza danych dla uzytkownikow, baza danych czysty plik jest w DB, username bedzie zaciagany z bazy tak samo status 
 onnline, jezeli byla wykonana jakas akcja to onnline sie odswierza na kolejne 5 min z zalozenia, (do zrobirnia)-->
 
@@ -70,11 +140,14 @@ onnline, jezeli byla wykonana jakas akcja to onnline sie odswierza na kolejne 5 
     </div>
     <div>
 </div>
+
+
 <footer>
-    <h1>Aktywni użytkownicy</h1>
-    <ul id="users-list">
-        <!-- Lista aktywnych użytkowników zostanie zaktualizowana przez AJAX -->
-    </ul>
+    <div class="share">
+        <spam>SOCIALE</spam>
+
+    </div>
 </footer>
+<script src="../JS/logowanie.js"></script>
 </body>
 </html>
