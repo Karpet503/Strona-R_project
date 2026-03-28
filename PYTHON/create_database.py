@@ -10,13 +10,15 @@ cursor = conn.cursor()
 username = os.getlogin()
 device_name = socket.gethostname()
 
+#  computer VARCHAR(100),
+#  telefon_num VARCHAR(12),
+
 # Tworzymy tabelę 'Customers' (jeśli nie istnieje)
 cursor.execute('''CREATE TABLE IF NOT EXISTS "Customers" (
   id INTEGER PRIMARY KEY,
   username VARCHAR(100) UNIQUE,
-  computer VARCHAR(100),
+  password VARCHAR(100),
   email VARCHAR(50),
-  telefon_num VARCHAR(12),
   last_log DATE,
   active BOOL
 )''')
@@ -44,8 +46,8 @@ VALUES (?, ?, ?, ?, ?)
 '''
 
 # Dodajemy przykładowych użytkowników do tabeli 'Customers'
-cursor.execute('''INSERT INTO "Customers" (username, computer, email, telefon_num, last_log, active) 
-    VALUES (?, ?, ?, ?, ?, ?)''', ('User', device_name, 'test@test.pl', '123321123', '2026-03-26', True))
+cursor.execute('''INSERT INTO "Customers" (username, password, email, last_log, active) 
+    VALUES (?, ?, ?, ?, ?)''', ('User', 'x', 'test@test.pl', '2026-03-26', True))
 
 # Dodajemy właściciela komputera do tabeli 'Owner'
 cursor.execute('''INSERT INTO "Owner" (computer, owner) 

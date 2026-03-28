@@ -1,16 +1,25 @@
 import os
 import sqlite3
 from flask import Flask, render_template, request, jsonify, send_from_directory
-
+#zabezpieczenie hasła biblioteka
+#from werkzeug.security import generate_password_hash, check_password_hash
 # Skróty pod ścieżki, BASE_DIR - z automaty podnosi o poziom foldery, by łatwiej się wpisywało ścieżki reszty folderów.
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-DATABASE = os.path.join(BASE_DIR, "app_data.db")
-TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
-JS_DIR = os.path.join(BASE_DIR, "JS")
-CSS_DIR = os.path.join(BASE_DIR, "CSS")
-IMG_DIR = os.path.join(BASE_DIR, "IMAGES")
+#BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+#ścieżka do folderu  
+DATABASE = os.path.join(BASE_DIR, "../app_data.db")
+#ścieżka do folderu template
+TEMPLATE_DIR = os.path.join(BASE_DIR, "../templates")
+#ścieżka do folderu JS
+JS_DIR = os.path.join(BASE_DIR, "../JS")
+#ścieżka do folderu CSS
+CSS_DIR = os.path.join(BASE_DIR, "../CSS")
+#ścieżka do folderu IMAGES
+IMG_DIR = os.path.join(BASE_DIR, "../IMAGES")
 
 app = Flask(__name__, template_folder=TEMPLATE_DIR)
+
+
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
@@ -18,12 +27,12 @@ def get_db_connection():
     return conn
 
 # Poniżej ścieżki do folderów, każda wskazuje do czego ma się co odwoływać na http://adres:port:ścieżka.
-@app.route("/rejestracja")
-def index():
-    return render_template("rejestracja.html")
+#@app.route("/rejestracja.html")
+#def index():
+    #return render_template("rejestracja.html")
 
 
-@app.route("/body")
+@app.route("/body.html")
 def body():
     return render_template("body.html")
 
@@ -48,11 +57,11 @@ def add_customer():
     data = request.get_json()
 
     username = data.get("username")
-    computer = data.get("computer")
     email = data.get("email")
-    telefon_num = data.get("telefon_num")
+    password = data.get("password")
 
-    if not username or not computer or not email or not telefon_num:
+
+    if not username or not password or not email:
         return jsonify({
             "success": False,
             "message": "Brak danych we wszsytkich polach."
@@ -63,9 +72,9 @@ def add_customer():
         cursor = conn.cursor()
 
         cursor.execute("""
-            INSERT INTO Customers (username, computer, email, telefon_num, active)
-            VALUES (?, ?, ?, ?, ?)
-        """, (username, computer, email, telefon_num, True))
+            INSERT INTO Customers (username, password, email, active)
+            VALUES (?, ?, ?, ?)
+        """, (username, password, email, True))
 
         conn.commit()
         conn.close()
@@ -88,7 +97,7 @@ def add_customer():
         }), 500
 
 # Nasłuch na komende "/SelectUSers" z metodą POST. Jak wygryje to wybiera podstawowe dane z tabeli CUSTOMERS.
-@app.route("/SelectUsers", methods=["GET"])
+""" @app.route("/SelectUsers", methods=["GET"])
 def SelectUsers():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -101,6 +110,6 @@ def SelectUsers():
     conn.close()
 
     return jsonify(items_list)
-
+"""
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True) 
