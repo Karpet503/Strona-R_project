@@ -3,12 +3,18 @@ import sqlite3
 from flask import Flask, render_template, request, jsonify, send_from_directory
 
 # Skróty pod ścieżki, BASE_DIR - z automaty podnosi o poziom foldery, by łatwiej się wpisywało ścieżki reszty folderów.
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-DATABASE = os.path.join(BASE_DIR, "app_data.db")
-TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
-JS_DIR = os.path.join(BASE_DIR, "JS")
-CSS_DIR = os.path.join(BASE_DIR, "CSS")
-IMG_DIR = os.path.join(BASE_DIR, "IMAGES")
+#BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+#ścieżka do folderu  
+DATABASE = os.path.join(BASE_DIR, "../app_data.db")
+#ścieżka do folderu template
+TEMPLATE_DIR = os.path.join(BASE_DIR, "../templates")
+#ścieżka do folderu JS
+JS_DIR = os.path.join(BASE_DIR, "../JS")
+#ścieżka do folderu CSS
+CSS_DIR = os.path.join(BASE_DIR, "../CSS")
+#ścieżka do folderu IMAGES
+IMG_DIR = os.path.join(BASE_DIR, "../IMAGES")
 
 app = Flask(__name__, template_folder=TEMPLATE_DIR)
 
@@ -18,12 +24,12 @@ def get_db_connection():
     return conn
 
 # Poniżej ścieżki do folderów, każda wskazuje do czego ma się co odwoływać na http://adres:port:ścieżka.
-@app.route("/rejestracja")
+@app.route("/rejestracja.html")
 def index():
     return render_template("rejestracja.html")
 
 
-@app.route("/body")
+@app.route("/body.html")
 def body():
     return render_template("body.html")
 
