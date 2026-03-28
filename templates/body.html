@@ -9,7 +9,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Załadowanie jQuery -->
     <script src="../JS/script.js"></script>  <!-- Załadowanie zewnętrznego pliku JS -->
     
-
+<!--==============================testy==================================================-->
+    
+    
+<!--=============================testy==================================================-->
 </head>
 <body class="main">
     <!--SPIS:
@@ -41,7 +44,7 @@
     </div>
 
     <div class="head_right_login"> 
-        <button class="login logowanie" onclick="bluruj()" type="button"><span>Logowanie</span> </button>
+        <button class="login logowanie" onclick="bluruj()" onclick="open()" type="button"><span>Logowanie</span> </button>
         <button class="login rejestracja" type="button"><span>Rejestracja</span></button>  <!--doaj href-->
     </div>
 </div>
@@ -50,7 +53,7 @@
 
 <div class="overlay"></div>
 <div class="sidebar">
-    <button class="block zamknij">X</button>
+    <button class="block zamknij" onclick="close">X</button>
 
 </div>
 
@@ -85,9 +88,6 @@ onnline, jezeli byla wykonana jakas akcja to onnline sie odswierza na kolejne 5 
     </div>
     <div>
 </div>
-
-
-
 
 
 <footer>

@@ -23,7 +23,7 @@ body{
     
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: 100000px;
     overflow-x: hidden;
 }
 
@@ -169,6 +169,7 @@ footer{
     bottom: 0;
     height: 50px;
     width: 100%;
+    z-index: 1;
 }
 
 .share{
@@ -193,14 +194,57 @@ footer{
     width: 100%;
     height: 100%;
     background-color: RGB(0,0,0,0.5);
-   
-    backdrop-filter: blur(2px);
     display: none;
+    backdrop-filter: blur(2px);
+    
+    
 
 
 }
+:root{
+    --sidebar-aper: none;
+}
 
-/*.overlay.active{
-    opacity: 1;
-    z-index: 9998;
-}*/
+.sidebar{
+    height: 100%;
+    width: 25%;
+    top:0;
+    right: 0;
+    background-color: rgb(30, 35, 45);
+    z-index: 9999;
+    position: fixed;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: var(--sidebar-width);
+    display: var(--sidebar-aper);
+
+}
+body.closed {
+    
+    --sidebar-width: 25%;
+    --sidebar-aper: ;
+
+
+    
+}
+.zamknij{
+    margin:6px;
+    font-size: 100%;
+    font-weight: bold;
+    position: sticky;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
