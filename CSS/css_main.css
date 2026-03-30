@@ -1,16 +1,12 @@
 .main{
     color: white;
     background-color: RGB(22, 28, 40);
-
-  background-image: linear-gradient(to bottom, black, rgb(22, 28, 40));
-  background-size: 100% 800px;
-  background-repeat: no-repeat;
-  background-position: top;
-
-
-  
-
+    background-image: linear-gradient(to bottom, black, rgb(22, 28, 40));
+     background-size: 100% 800px;
+     background-repeat: no-repeat;
+    background-position: top;
 }
+
 html, body {
     overflow-x: hidden; /* Hide any horizontal overflow */
     margin: 0;
@@ -20,7 +16,6 @@ html, body {
 }
 
 body{
-    
     padding: 0;
     width: 100%;
     height: 100000px;
@@ -54,9 +49,7 @@ h1{
 .head_midl_options{
     flex: 0 0 20%; 
     text-align: center;
-
     display: flex;
-
     font-size:  90%;
     
 }
@@ -142,11 +135,12 @@ font-size: x-large;
 }
 
 .User_stats {
-    text-align: center;
+    text-align: left;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
+    font-size: medium;
 }
 
 .block_stats {
@@ -154,10 +148,6 @@ font-size: x-large;
     height: 100%;
     border-radius: 5px;
     border-style: solid;
-}
-
-.box {
-
 }
 
 #status{
@@ -182,9 +172,6 @@ footer{
     display: flex; 
     align-items: center;
     justify-content: center;
-
-
-
 }
 
 .overlay{
@@ -196,16 +183,11 @@ footer{
     background-color: RGB(0,0,0,0.5);
     display: none;
     backdrop-filter: blur(2px);
-    
-    
-
-
 }
 :root{
     --sidebar-aper: none;
     --sidebar-zindexLog: -1;
     --sidebar-zindexRej: -1;
-
 }
 
 .sidebar_S_log{
@@ -223,7 +205,6 @@ footer{
 
 }
 body.Open_Log {
-    
     --sidebar-width: 25%;
     --sidebar-aper: ;
     --sidebar-zindexLog: 9999;
@@ -245,7 +226,6 @@ body.Open_Log {
 }
 
 body.Open_Rej {
-    
     --sidebar-width: 25%;
     --sidebar-aper: ;
     --sidebar-zindexRej: 9999;
@@ -263,6 +243,10 @@ body.Open_Rej {
     text-align: center;
 }
 
+.input-box{
+    font-size: small;
+    text-align: left;
+}
 
 
 

@@ -6,9 +6,8 @@
     <title>PS_Stat</title>
     <link rel="stylesheet" href="../CSS/css_main.css"> <!-- Import css-->
     <link rel="shortcut icon" href="../IMAGES/Logo v2.ico">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Załadowanie jQuery -->
-    <script src="../JS/script.js"></script>  <!-- Załadowanie zewnętrznego pliku JS -->
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Załadowanie jQuery --> 
+    <script src="../JS/p_base.js"></script><!-- Załadowanie zewnętrznego pliku JS -->
 <!--==============================testy==================================================-->
     
     
@@ -38,20 +37,20 @@
         <div class="head_left_logo">R_project</div>
 
         <div class="head_midl_options"><!-- blok główny trzymający panel górny-->
-            <button class="block Główna" type="button" onclick="window.location.href='/body'"><span>Główna</span> </button>
+            <button class="block Główna" type="button" onclick="window.location.href='/body.html'"><span>Główna</span> </button>
             <button class="block PC_Stat" type="button"><span>PC stats</span> </button>
             <button class="block TODO" type="button"><span>TODO</span> </button>
             <button class="block TODO" type="button"><span>TODO</span> </button>
         </div>
 
-        <div class="head_right_login"> 
-            <button class="login logowanie" type="button"><span>Logowanie</span></button>
-            <button class="login rejestracja" type="button" onclick="window.location.href='/rejestracja'"><span>Rejestracja</span></button>
-        </div>
+ #       <!-- <div class="head_right_login"> 
+          <button class="login logowanie" type="button"><span>Logowanie</span></button>
+            <button class="login rejestracja" type="button" ><span>Rejestracja</span></button>
+        </div> -->
 
     <div class="head_right_login"> 
         <button class="login logowanie" onclick="bluruj()" type="button"><span>Logowanie</span> </button>
-        <button class="login rejestracja" onclick="bluruj()"  type="button"><span>Rejestracja</span></button>  <!--doaj href-->
+        <button class="login rejestracja" onclick="bluruj()"  type="button" onclick="window.location.href='/rejestracja'"><span>Rejestracja</span></button>  <!--doaj href-->
     </div>
 </div>
 
@@ -66,13 +65,16 @@
         <form action="#">
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="emile" required>
+                <input type="email" id="email_login" required>
                 <lable>Email</lable>
             </div>
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="hasło" required>
+                <input type="password" id="password_login" required>
                 <lable>Hasło</lable>
+            </div>
+            <div class="input-box">
+                <button onclick="loginUser() ">Login</button>
             </div>
 
 
@@ -87,22 +89,26 @@
         <p class="zamknij">REJESTRACJA</p>
 
         <form action="#">
+            
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="emile" required>
+                <input id="username" type="text" required>
+                <lable>Username</lable>
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <input id="email" type="email" required>
                 <lable>Email</lable>
             </div>
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="hasło" required>
+                <input id="password" type="password" required>
                 <lable>Hasło</lable>
             </div>
             <div class="input-box">
-                <span class="icon"></span>
-                <input type="hasło" required>
-                <lable>Hasło</lable>
+                <button onclick="addCustomer() ">Rejestracja</button>
             </div>
-
+            
 
         </form>
 
@@ -120,28 +126,26 @@
 onnline, jezeli byla wykonana jakas akcja to onnline sie odswierza na kolejne 5 min z zalozenia, (do zrobirnia)-->
 
 <div class="User_Interface"><!-- blok główny trzymający bloki stats-->
-    <div id="username">username <a id="status">&bull;</a></div><!--username nad blokami z ikonka ascii ktora w css jest zielona -->
+    <div id="username"><p id="show_username"></p> <a id="status">&bull;</a></div><!--username nad blokami z ikonka ascii ktora w css jest zielona -->
     <div class="User_stats"><!--blok nadrzedny trzymajacy 4 bloki block_stat razem--> 
     <div class="block_stats">CPU <!--blok odpowiedzialny za pomniejszy fragment w ktorym beda % zuzycia-->
-        <div class="box">25%/100%</div>
-        <div class="box">6cores</div>
+        <div class="box"><span id="cpu_usage"></span>%/100%</div>
+        <div class="box">0cores</div>
     </div>
     <div class="block_stats">RAM
-        <div class="box">25%/100%</div>
-        <div class="box">12GB/32GB</div>
+        <div class="box"><span id="mem_usage"></span>%/100%</div>
+        <div class="box"><span id="mem_available">GB</span>/<span id="mem_total">GB</span></div>
     </div>
     <div class="block_stats">GPU
-        <div class="box">25%/100%</div>
-        <div class="box">2GB/8GB</div>
+        <div class="box">0%/0%</div>
+        <div class="box">0GB/0GB</div>
     </div>
     <div class="block_stats">DISK_SPACE
-        <div class="box">25%/100%</div>
-        <div class="box">50GB/256GB</div>
+        <div class="box">0%/0%</div>
+        <div class="box">0GB/0GB</div>
     </div>
     <div>
 </div>
-
-
 <footer>
     <div class="share">
         <spam>SOCIALE</spam>

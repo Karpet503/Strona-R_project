@@ -7,3 +7,8 @@ Strona umożliwi podgląd obecnych parametrów komputerów dodanych do bazy (obe
 
 ### Zasada działania
 "W trakcie..."
+
+#### Pomysł
+
+Test sieciowy każdego urządzenia podłączonego do użytkownika 
+aka test sieciowy do całego pomieszczenia (użytkownika)
