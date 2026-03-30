@@ -1,6 +1,10 @@
 import os
 import sqlite3
 from flask import Flask, render_template, request, jsonify, send_from_directory
+import threading
+import time
+import subprocess
+import data
 #zabezpieczenie hasła biblioteka
 #from werkzeug.security import generate_password_hash, check_password_hash
 # Skróty pod ścieżki, BASE_DIR - z automaty podnosi o poziom foldery, by łatwiej się wpisywało ścieżki reszty folderów.
@@ -19,17 +23,15 @@ IMG_DIR = os.path.join(BASE_DIR, "../IMAGES")
 
 app = Flask(__name__, template_folder=TEMPLATE_DIR)
 
-
+def run_script():
+    while True:
+        subprocess.run(["python", "info_usage.py"])
+        time.sleep(5)
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
     conn.row_factory = sqlite3.Row
     return conn
-
-# Poniżej ścieżki do folderów, każda wskazuje do czego ma się co odwoływać na http://adres:port:ścieżka.
-#@app.route("/rejestracja.html")
-#def index():
-    #return render_template("rejestracja.html")
 
 
 @app.route("/body.html")
@@ -96,20 +98,60 @@ def add_customer():
             "message": str(e)
     }), 500
 
-# Nasłuch na komende "/SelectUSers" z metodą POST. Jak wygryje to wybiera podstawowe dane z tabeli CUSTOMERS.
-""" @app.route("/SelectUsers", methods=["GET"])
-def SelectUsers():
+@app.route("/Login", methods=["POST"])
+def login():
     conn = get_db_connection()
     cursor = conn.cursor()
+    
+    try:
+        data = request.get_json()
+        email_login = data.get("email_login")
+        password_login = data.get("password_login")
 
-    cursor.execute("SELECT id, username, computer, email, telefon_num FROM Customers")
-    items = cursor.fetchall()
+        cursor.execute("""
+            SELECT username, email, active
+            FROM Customers
+            WHERE email = ? AND password = ?
+        """, (email_login, password_login))
 
-    items_list = [{'id': item['id'], 'username': item['username'], 'computer': item['computer'], 'email': item['email'], 'telefon_num': item['telefon_num']} for item in items]
+        result = cursor.fetchone()
 
-    conn.close()
+        if result:
+            username = result[0]
+            active = result[2]
 
-    return jsonify(items_list)
-"""
+            return jsonify({
+                "success": True,
+                "message": "Logowanie poprawne",
+                "username": username,
+                "active": active
+            }), 200
+        else:
+            return jsonify({
+                "success": False,
+                "message": "Niepoprawny email lub hasło"
+            }), 401
+
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "message": str(e)
+        }), 500
+
+    finally:
+        conn.close()
+
+thread = threading.Thread(target=run_script, daemon=True)
+thread.start()
+
+@app.route("/get_usage")
+def get_usage():
+    return jsonify({
+        "memory_total": data.memory_total,
+        "memory_available": data.memory_available,
+        "memory_usage": data.memory_usage,
+        "cpu_usage": data.cpu_usage
+    })
+
 if __name__ == "__main__":
     app.run(debug=True) 
