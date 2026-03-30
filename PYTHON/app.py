@@ -7,7 +7,7 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 #BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 #ścieżka do folderu  
-DATABASE = os.path.join(BASE_DIR, "../app_data.db")
+DATABASE = os.path.join(BASE_DIR, "app_data.db")
 #ścieżka do folderu template
 TEMPLATE_DIR = os.path.join(BASE_DIR, "../templates")
 #ścieżka do folderu JS
@@ -34,7 +34,7 @@ def get_db_connection():
 
 @app.route("/body.html")
 def body():
-    return render_template("body.html")
+    return render_template("/body.html")
 
 
 @app.route("/JS/<path:filename>")
@@ -94,7 +94,7 @@ def add_customer():
         return jsonify({
             "success": False,
             "message": str(e)
-        }), 500
+    }), 500
 
 # Nasłuch na komende "/SelectUSers" z metodą POST. Jak wygryje to wybiera podstawowe dane z tabeli CUSTOMERS.
 """ @app.route("/SelectUsers", methods=["GET"])
